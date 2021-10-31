@@ -1,0 +1,23 @@
+{
+  "fields": [
+    {
+      "default": null,
+      "name": "ID",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "default": null,
+      "name": "DIFFERENCE",
+      "type": [
+        "null",
+        "int"
+      ]
+    }
+  ],
+  "name": "KsqlDataSourceSchemaDiff",
+  "namespace": "io.confluent.ksql.avro_schemas",
+  "type": "record"
+}

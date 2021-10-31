@@ -1,0 +1,23 @@
+{
+  "fields": [
+    {
+      "default": null,
+      "name": "ID",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "default": null,
+      "name": "SUM",
+      "type": [
+        "null",
+        "int"
+      ]
+    }
+  ],
+  "name": "KsqlDataSourceSchema",
+  "namespace": "io.confluent.ksql.avro_schemas",
+  "type": "record"
+}

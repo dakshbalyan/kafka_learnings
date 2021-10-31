@@ -1,0 +1,123 @@
+{
+  "type": "record",
+  "namespace": "com.example",
+  "name": "EmpValue",
+  "doc": "for learning flattening and windowing",
+  "fields": [
+    {
+      "name": "empID",
+      "type": "string"
+    },
+    {
+      "name": "NAME",
+      "type": {
+        "type": "record",
+        "name": "FULL_NAME",
+        "fields": [
+          {
+            "name": "FIRST_NAME",
+            "type": "string"
+          },
+          {
+            "name": "LAST_NAME",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ADDRESS",
+      "type": {
+        "name": "PERSONAL_ADDRESS",
+        "type": "record",
+        "fields": [
+          {
+            "name": "STREET",
+            "type": "string"
+          },
+          {
+            "name": "CITY",
+            "type": "string"
+          },
+          {
+            "name": "STATE",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SALARY",
+      "type": {
+        "name": "SALARY",
+        "type": "record",
+        "fields": [
+          {
+            "name": "BASE_SALARY",
+            "type": "int"
+          },
+          {
+            "name": "BONUS",
+            "type": "int"
+          },
+          {
+            "name": "INCENTIVES",
+            "type": ["null", "boolean"],
+            "default": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "COMPANY",
+      "type": {
+        "name": "COMPANY_INFO",
+        "type": "record",
+        "fields": [
+          {
+            "name": "COMPANY_NAME",
+            "type": "string"
+          },
+          {
+            "name": "DEPARTMENT",
+            "type": "string"
+          },
+          {
+            "name": "POST",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FAMILY",
+      "type": ["null",
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "name": "FAMILY_MEMBERS",
+            "fields": [
+              {
+                "name": "NAME",
+                "type": ["null", "string"],
+                "default": null
+              },
+              {
+                "name": "RELATION",
+                "type": ["null", "string"],
+                "default": null
+              },
+              {
+                "name": "AGE",
+                "type": ["null", "int"],
+                "default": null
+              }
+            ]
+          }
+        }
+      ],
+      "default": null
+    }
+  ]
+}
